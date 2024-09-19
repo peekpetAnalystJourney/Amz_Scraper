@@ -8,10 +8,9 @@ import os
 get_path = os.path.dirname(os.path.abspath(__file__))
 
 # MacOs config
-WEBDRIVER_PATH_MAC = '/usr/local/bin/chromedriver'
-
+WEBDRIVER_PATH_MAC = get_path + 'chromedriver.exe'
 # Windows config
-WEBDRIVER_PATH_WIN = get_path + '\\chromedrivers\\chromedriver.exe'
+WEBDRIVER_PATH_WIN = get_path + 'chromedriver.exe'
 
 URL = 'https://www.amazon.jobs/en/search?base_query=manager&loc_query=Torino%' \
       '2C+Piedmont%2C+Italy&latitude=45.06236&longitude=7.67994&loc_group_id=&' \
