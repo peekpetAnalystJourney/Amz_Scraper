@@ -10,14 +10,7 @@ import csv
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-"""
-from config import URL
-from config import WEBDRIVER_PATH_MAC
-from config import WEBDRIVER_PATH_WIN
 
-from selenium import webdriver 
-from selenium.webdriver.chrome.options import Options
-"""
 chrome_options = Options()
 # chrome_options.add_argument("--disable-extensions")
 # chrome_options.add_argument("--disable-gpu")
