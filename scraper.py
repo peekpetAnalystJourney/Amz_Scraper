@@ -10,21 +10,41 @@ import csv
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+"""
 from config import URL
 from config import WEBDRIVER_PATH_MAC
 from config import WEBDRIVER_PATH_WIN
+
+from selenium import webdriver 
+from selenium.webdriver.chrome.options import Options
+"""
+chrome_options = Options()
+# chrome_options.add_argument("--disable-extensions")
+# chrome_options.add_argument("--disable-gpu")
+# chrome_options.add_argument("--no-sandbox") # linux only
+chrome_options.add_argument("--headless=new") # for Chrome >= 109
+# chrome_options.add_argument("--headless")
+# chrome_options.headless = True # also works
+driver = webdriver.Chrome(options=chrome_options)
+start_url = "https://duckgo.com"
+driver.get(start_url)
+print(driver.page_source.encode("utf-8"))
+# b'<!DOCTYPE html><html xmlns="http://www....
+driver.quit()
 
 
 class Scraper:
     """
     This is the main class of the application
     """
+    """
     @staticmethod
     def create_browser(driver_path: str) -> webdriver.Chrome:
         """
+        """
         Creating a selenium object to simulate a browser.
         The headless tag creates an invisible browser.
+        """
         """
         browser_options = Options()
         browser_options.add_argument('--headless')
@@ -33,6 +53,7 @@ class Scraper:
                                    options=browser_options)
         print('Done Creating Browser')
         return browser
+        """
 
     @staticmethod
     def get_job_and_location(soup: BeautifulSoup) -> list:
