@@ -30,5 +30,4 @@ jobs:
         pip install selenium==3.141.0 
         pip install --upgrade urllib3==1.26.16
         pip install beautifulsoup4==4.9
-      run: |
         python scraper.py
