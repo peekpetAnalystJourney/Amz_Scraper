@@ -9,23 +9,27 @@ import sys
 import csv
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
+
+driver = webdriver.Chrome("chromedriver")
+print('Done Updating Webdriver')
 
 from config import URL
 from config import WEBDRIVER_PATH_MAC
 from config import WEBDRIVER_PATH_WIN
 
 
-driver_path = "chromedriver.exe"
-driver = webdriver.Chrome(executable_path="chromedriver")
-print('Done Updating Webdriver')
 class Scraper:
     """
     This is the main class of the application
     """
     @staticmethod
     def create_browser(driver_path: str) -> webdriver.Chrome:
-        driver_path = "chromedriver.exe"
+        """
+        Creating a selenium object to simulate a browser.
+        The headless tag creates an invisible browser.
+        """
         browser_options = Options()
         browser_options.add_argument('--headless')
         browser_options.add_argument('--no-sandbox')
@@ -33,7 +37,6 @@ class Scraper:
                                    options=browser_options)
         print('Done Creating Browser')
         return browser
-       
 
     @staticmethod
     def get_job_and_location(soup: BeautifulSoup) -> list:
@@ -105,4 +108,3 @@ if __name__ == '__main__':
     SOUP = BeautifulSoup(PAGE_HTML, features="html.parser")
     Scraper.get_job_and_location(SOUP)
     print('Your amazon.jobs url has been scraped. Check your output CSV file.')
-
