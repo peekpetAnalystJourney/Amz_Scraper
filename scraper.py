@@ -33,12 +33,8 @@ class Scraper:
     """
     @staticmethod
     def create_browser(driver_path: str) -> webdriver.Chrome:
-        """
-        """
         Creating a selenium object to simulate a browser.
         The headless tag creates an invisible browser.
-        """
-        """
         browser_options = Options()
         browser_options.add_argument('--headless')
         browser_options.add_argument('--no-sandbox')
