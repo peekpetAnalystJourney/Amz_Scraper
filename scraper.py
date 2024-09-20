@@ -17,7 +17,7 @@ from config import WEBDRIVER_PATH_WIN
 
 
 driver_path = "chromedriver.exe"
-driver = webdriver.Chrome(executable_path=r"chromedriver.exe")
+driver = webdriver.Chrome(executable_path="chromedriver.exe")
 print('Done Updating Webdriver')
 class Scraper:
     """
