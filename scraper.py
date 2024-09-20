@@ -17,6 +17,8 @@ from config import WEBDRIVER_PATH_WIN
 
 
 driver_path = "chromedriver.exe"
+driver = webdriver.chrome(executable_path=r"chromedriver.exe")
+print('Done Updating Webdriver')
 class Scraper:
     """
     This is the main class of the application
@@ -31,7 +33,7 @@ class Scraper:
                                    options=browser_options)
         print('Done Creating Browser')
         return browser
-        """
+       
 
     @staticmethod
     def get_job_and_location(soup: BeautifulSoup) -> list:
